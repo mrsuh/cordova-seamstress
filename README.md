@@ -1,4 +1,4 @@
-# Cordova Seamstress applicaiton #
+# Cordova Seamstress application #
 
 Simple Cordova application: calculator for seamstress with its own logic
 
@@ -7,7 +7,7 @@ Simple Cordova application: calculator for seamstress with its own logic
 
 ### install Python ###
 download source code from [python](https://www.python.org/downloads)
-extract archive to folder `python`
+and extract archive to folder `python`
 ```bash
 cd python
 ./configure
@@ -17,7 +17,7 @@ sudo make install
 
 ### install Node.js ###
 download source code from [node.js](https://nodejs.org/en/download)
-extract archive to folder `node`
+and extract archive to folder `node`
 ```bash
 cd node
 ./configure
@@ -40,7 +40,7 @@ PATH=$PATH:/usr/lib/java/bin
 
 ### install Android SDK ###
 download source code from [android sdk](http://developer.android.com/sdk/index.html)
-extract archive to folder `android-sdk`
+and extract archive to folder `android-sdk`
 ```
 mv android-sdk /usr/lib/android-sdk
 ```
@@ -55,7 +55,7 @@ run android
 android
 ```
 
-download libs:
+and download libs:
 * Android SDK Build-tools
 * Android 6.0 (API 23)
 * Android Support Repository (Extras)
