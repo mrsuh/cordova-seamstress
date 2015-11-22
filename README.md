@@ -67,8 +67,8 @@ sudo npm install -g cordova
 
 ## Creating Cordova project ##
 ```
-cordova create project com.project.workshop project
-cd workshop
+cordova create project
+cd project
 cordova platforms add android
 ```
 
