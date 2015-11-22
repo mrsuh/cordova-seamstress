@@ -17,15 +17,15 @@ var app = {
     },
     setTotal: function () {
         var basis = document.getElementById("_basis");
+        var basis_value = document.querySelector('#_basis .value');
         var total = document.getElementById("_total");
-        var basis_value = basis.value;
 
-        if (!app.checkNumber(basis_value) || 0 == basis_value) {
-            basis.parentNode.parentNode.className = "container-fluid value bg-danger";
+        if (!app.checkNumber(basis_value.value) || 0 == basis_value.value) {
+            basis.className = "container-fluid bg-danger";
             total.innerHTML = '0.00';
         } else {
-            basis.parentNode.parentNode.className = "container-fluid value";
-            total.innerHTML = parseFloat(basis_value).toFixed(2);
+            basis.className = "container-fluid ";
+            total.innerHTML = parseFloat(basis_value.value).toFixed(2);
         }
 
         app.mathPrice();
@@ -35,7 +35,7 @@ var app = {
         return regexp.test(number) && number;
     },
     mathPrice: function () {
-        var basis_value = document.getElementById("_basis").value;
+        var basis_value = document.querySelector('#_basis .value').value;
         var check_basis_value = app.checkNumber(basis_value);
         if (!check_basis_value) {
             basis_value = 0;

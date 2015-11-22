@@ -3,7 +3,6 @@
 Simple Cordova application: calculator for seamstress with its own logic
 
 ## Cordova installation ##
-### install GCC ###
 
 ### install Python ###
 download source code from [python](https://www.python.org/downloads)
