@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.seamstress.xxx" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Seamstress</name>
+    <description>
+        A simple calulator for seamstress
+    </description>
+    <author email="mrsuh6@gmail.com">
+       Sukhachev Anton
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <platform name="android">
+ 	<icon src="icon.png" />
+        <allow-intent href="market:*" />
+    </platform>
+</widget>

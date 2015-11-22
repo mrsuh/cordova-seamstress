@@ -1,0 +1,26 @@
+.container-fluid {
+    padding-bottom: 5px;
+    padding-top: 5px
+}
+
+hr {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border-color: inherit;
+}
+
+.name {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.price {
+    margin-top: 5px;
+    font-weight: bold;
+}
+.container-fluid {
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
