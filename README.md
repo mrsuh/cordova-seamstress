@@ -1,6 +1,7 @@
 # Cordova Seamstress application #
 
 Simple Cordova application: calculator for seamstress with its own logic
+
 ![Android app](https://github.com/mrsuh/cordova-seamstress/blob/master/img/img.jpg)
 
 ## Cordova installation ##
