@@ -5,167 +5,344 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
     <title>Seamstress</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+
 </head>
 <body>
-<br>
-<div class="container-fluid" id="_basis">
-    <div class="col-xs-6 name">
-        <label>Цена основы:</label>
+
+<div style="display: none">
+    <select id="table_block_select" class="number">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <input id="table_block_checkbox" type="checkbox" class="number">
+</div>
+
+<div class="block" id="table_block">
+    <div class="name"></div>
+    <div class="price"></div>
+    <div class="number"></div>
+</div>
+
+<div class="settings-block" id="settings_block" style="display: none">
+    <span class="delete"></span>
+    <div>
+        <label>Наименование
+            <input type="text" class="name" placeholder="Наименование">
+        </label>
+        <label>
+            Значение
+            <input type="number" class="value" placeholder="999.99">
+        </label>
     </div>
-    <div class="col-xs-6">
-        <input class="form-control value">
+    <div>
+        <label>Величины
+            <select class="pay">
+                <option value="1">проценты</option>
+                <option value="2">единицы</option>
+            </select>
+        </label>
+        <label>Количество
+            <select class="number">
+                <option value="1">один</option>
+                <option value="2">несколько</option>
+            </select>
+        </label>
     </div>
 </div>
-<p>
-<div class="container-fluid">
-    <div class="col-xs-6 name">
-        Наименование
+
+<!-- slide main-->
+<div id="main">
+    <div class="header">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-    <div class="col-xs-3 name">
-        Цена
-    </div>
-    <div class="col-xs-3 name">
-        Кол-во
-    </div>
-</div>
-<hr><p>
-<div class="container-fluid" id="_hand_hem">
-    <div class="col-xs-6 name">
-        Ручная подгибка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_cuffs">
-    <div class="col-xs-6 name">
-        Манжет:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_lining">
-    <div class="col-xs-6 name">
-        Подкладка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_coquette_slot">
-    <div class="col-xs-6 name">
-        Кокетка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
+
+    <div class="content">
+
+        <div class="base">
+            <span>Цена основы</span>
+            <input id="pay_base" type="number" placeholder="9999.99">
+        </div>
+
+        <div class="table">
+
+            <div class="table-header">
+                <div class="block">
+                    <div class="name">Наименование</div>
+                    <div class="price">Цена</div>
+                    <div class="count">Кол-во</div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="table-body">
+                <div class="block">
+                    <div class="name">Рукав</div>
+                    <div class="price">120.00</div>
+                    <div class="count"></div>
+                </div>
+                <div class="block">
+                    <div class="name">Рукав</div>
+                    <div class="price">120.00</div>
+                    <div class="count"></div>
+                </div>
+                <div class="block">
+                    <div class="name">Рукав</div>
+                    <div class="price">120.00</div>
+                    <div class="count"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result">
+            <span>Результат: </span>
+            <span id="pay_result"></span>
+        </div>
+
     </div>
 </div>
-<div class="container-fluid" id="_slot">
-    <div class="col-xs-6 name">
-        Шлица:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
+
+
+<!-- slide settings-->
+<div id="settings">
+    <button type="button" class="btn-add-field" id="btn_add_field">+</button>
 </div>
-<div class="container-fluid" id="_incision">
-    <div class="col-xs-6 name">
-        Разрез:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_shaped_bottom">
-    <div class="col-xs-6 name">
-        Фигурный низ:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_fabric_complexity">
-    <div class="col-xs-6 name">
-        Сложность ткани:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_pocket">
-    <div class="col-xs-6 name">
-        Карман:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <select class="form-control value">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-</div>
-<div class="container-fluid" id="_additional_detail">
-    <div class="col-xs-6 name">
-        Доп. деталь:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <select class="form-control value">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-</div>
-<p><hr><p>
-<div class="container-fluid">
-    <div class="col-xs-6">
-        <label>Итого:</label>
-    </div>
-    <div class="col-xs-6">
-        <label id="_total">0.00</label>
-    </div>
-</div>
-<script type="text/javascript" src="js/math.js"></script>
+
+<script>
+
+    document.querySelector('.hamburger').onclick = function () {
+        var settings = document.getElementById('settings');
+        if (settings.className === 'active') {
+            settings.className = '';
+            saveSettings();
+            loadMain();
+        } else {
+            settings.className = 'active';
+            loadSettings();
+        }
+    };
+
+    var addSettings = function () {
+        var block = document.getElementById('settings_block');
+        var cln = block.cloneNode(true);
+        cln.style.display = 'block';
+        bindDelete(cln.querySelector('.delete'));
+        document.querySelector('#settings').appendChild(cln);
+    };
+
+    document.getElementById('btn_add_field').onclick = addSettings;
+
+    var saveSettings = function () {
+        var fields = document.querySelectorAll('#settings .settings-block');
+        localStorage.clear();
+        var length = fields.length;
+        for (var i = 0; i < length; i++) {
+            var value = parseFloat(fields[i].querySelector('.value').value);
+            localStorage.setItem(i.toString(), JSON.stringify({
+                name: fields[i].querySelector('.name').value,
+                value: isNaN(value) ? 0 : value,
+                pay: parseInt(fields[i].querySelector('.pay').value),
+                number: parseInt(fields[i].querySelector('.number').value)
+            }));
+        }
+    };
+
+    var loadSettings = function () {
+
+        var settings = document.getElementById('settings');
+        var children = settings.children;
+        var length = children.length;
+        console.info(children);
+        for (var i = 0; i < length; i++) {
+
+            if (!children.hasOwnProperty(i)) {
+                continue;
+            }
+
+            console.info(children[i]);
+            if (children[i].getAttribute('id') === 'btn_add_field') {
+                continue;
+            }
+            settings.removeChild(children[i]);
+        }
+
+        var settings_block = document.getElementById('settings_block');
+        for (var key in localStorage) {
+            var data = JSON.parse(localStorage[key]);
+
+            var cln = settings_block.cloneNode(true);
+            cln.querySelector('.name').value = data['name'];
+            cln.querySelector('.value').value = data['value'];
+            cln.querySelector('.pay').value = data['pay'];
+            cln.querySelector('.number').value = data['number'];
+            cln.style.display = 'block';
+            cln.removeAttribute('id');
+            bindDelete(cln.querySelector('.delete'));
+            settings.appendChild(cln);
+        }
+    };
+
+    var loadMain = function () {
+
+        var table = document.querySelector('#main .table-body');
+        while (table.firstChild) {
+            table.removeChild(table.firstChild);
+        }
+
+        var table_block = document.getElementById('table_block');
+        var table_block_select = document.getElementById('table_block_select');
+        var table_block_checkbox = document.getElementById('table_block_checkbox');
+
+        for (var key in localStorage) {
+            var data = JSON.parse(localStorage[key]);
+            console.info(data);
+
+            var cln = table_block.cloneNode(true);
+
+            cln.querySelector('.name').innerText = data['name'];
+            cln.setAttribute('data-value', data['value']);
+            cln.setAttribute('data-pay', data['pay']);
+            cln.removeAttribute('id');
+            var number = parseInt(data['number']);
+
+            var input = table_block_checkbox.cloneNode(true);
+            if (number === 2) {
+                input = table_block_select.cloneNode(true);
+            }
+
+            input.removeAttribute('id');
+            cln.querySelector('.number').appendChild(input);
+            cln.style.display = 'block';
+            table.appendChild(cln);
+        }
+    };
+
+    //    var showFields = function () {
+    //        var show_table = document.querySelector('#show_table tbody');
+    //
+    //        while (show_table.firstChild) {
+    //            show_table.removeChild(show_table.firstChild);
+    //        }
+    //
+    //        var select = document.getElementById('show_number_type_select');
+    //        var checkbox = document.getElementById('show_number_type_checkbox');
+    //        for (var key in localStorage) {
+    //            var data = JSON.parse(localStorage[key]);
+    //            var show_tr = document.createElement('tr');
+    //
+    //            var show_td_name = document.createElement('td');
+    //            show_td_name.className = 'name';
+    //            show_td_name.innerText = data.name;
+    //
+    //            var show_td_pay = document.createElement('td');
+    //            show_td_pay.className = 'pay';
+    //            show_td_pay.setAttribute('data-type', data.pay_type);
+    //            show_td_pay.setAttribute('data-value', data.pay_value);
+    //
+    //            var show_td_number = document.createElement('td');
+    //            show_td_number.className = 'number';
+    //            show_td_number.setAttribute('data-type', data.number_type);
+    //
+    //            var show_number_type = null;
+    //            if (data.number_type === 1) {
+    //                show_number_type = checkbox.cloneNode(true);
+    //            } else {
+    //                show_number_type = select.cloneNode(true);
+    //            }
+    //            show_number_type.removeAttribute('id');
+    //            show_number_type.onchange = function () {
+    //                remath();
+    //            };
+    //
+    //            show_td_number.appendChild(show_number_type);
+    //
+    //            show_tr.appendChild(show_td_name);
+    //            show_tr.appendChild(show_td_pay);
+    //            show_tr.appendChild(show_td_number);
+    //
+    //            show_table.appendChild(show_tr);
+    //        }
+    //    };
+
+    var bindDelete = function (elem) {//todo confirm
+
+        elem.onclick = function (e) {
+            var del = confirm("Удалить?");
+            if (del) {
+                e.target.parentNode.remove();
+            }
+        }
+    };
+
+    //    var tr = document.getElementById('tr');
+    //    var table = document.querySelector('#table tbody');
+    //    for (var key in localStorage) {
+    //        var data = JSON.parse(localStorage[key]);
+    //        var tr_clone = tr.cloneNode(true);
+    //        tr_clone.removeAttribute('id');
+    //        tr_clone.removeAttribute('data-type');
+    //        tr_clone.querySelector('.name').value = data.name;
+    //        tr_clone.querySelector('.pay_type').value = data.pay_type;
+    //        tr_clone.querySelector('.pay_value').value = data.pay_value;
+    //        tr_clone.querySelector('.number_type').value = data.number_type;
+    //        bindDelete(tr_clone.querySelector('.delete'));
+    //        table.appendChild(tr_clone);
+    //    }
+
+    var remath = function () {
+        console.info('remath 2');
+        var pay_base = parseFloat(document.getElementById('pay_base').value);
+
+        console.info(pay_base);
+        if (0 === pay_base || isNaN(pay_base)) {
+            console.info('invalid base');
+            return false;
+        }
+        var fields = document.querySelectorAll('#show_table tbody tr');
+        var result = pay_base;
+        var length = fields.length;
+
+        for (var i = 0; i < length; i++) {
+
+            var pay_type = parseInt(fields[i].querySelector('.pay').getAttribute('data-type'));
+            var pay_number = parseFloat(fields[i].querySelector('.pay').getAttribute('data-value'));
+            var number_type = parseInt(fields[i].querySelector('.number').getAttribute('data-type'));
+
+            var number = null;
+            if (number_type === 1) {
+                number = fields[i].querySelector('.number .number_type').checked ? 1 : 0;
+            } else {
+                number = fields[i].querySelector('.number .number_type').value;
+            }
+
+            var pay_add = 0;
+            if (pay_type === 1) {
+                pay_add += pay_base * (pay_number / 100) * number;
+            } else {
+                pay_add += pay_number * number;
+            }
+
+            fields[i].querySelector('.pay').innerText = pay_add.toFixed(2);
+            result += pay_add;
+        }
+
+        document.getElementById('pay_result').innerText = result.toFixed(2);
+    };
+
+    document.getElementById('pay_base').oninput = function () {
+        remath();
+    };
+
+</script>
 </body>
 </html>

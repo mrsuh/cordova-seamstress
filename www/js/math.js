@@ -31,7 +31,7 @@ var app = {
         app.mathPrice();
     },
     checkNumber: function (number) {
-        regexp = new RegExp("^[0-9]*$");
+        var regexp = new RegExp("^[0-9]*$");
         return regexp.test(number) && number;
     },
     mathPrice: function () {
