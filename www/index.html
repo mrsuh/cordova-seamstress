@@ -5,167 +5,108 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
     <title>Seamstress</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
 </head>
 <body>
-<br>
-<div class="container-fluid" id="_basis">
-    <div class="col-xs-6 name">
-        <label>Цена основы:</label>
+
+<div style="display: none">
+    <select id="table_block_select" class="number">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <input id="table_block_checkbox" type="checkbox" class="number">
+</div>
+
+<div class="block" id="table_block">
+    <div class="name"></div>
+    <div class="price"></div>
+    <div class="number"></div>
+</div>
+
+<div id="select" style="display: none"></div>
+
+<div class="settings-block" id="settings_block" style="display: none">
+    <span class="delete"></span>
+    <div>
+        <label>
+            Наименование
+            <input type="text" class="name" placeholder="Наименование">
+        </label>
+        <label>
+            Значение
+            <input type="number" class="value" placeholder="999.99">
+        </label>
     </div>
-    <div class="col-xs-6">
-        <input class="form-control value">
+    <div>
+        <label>
+            Величины
+            <select class="pay">
+                <option value="1">проценты</option>
+                <option value="2">единицы</option>
+            </select>
+        </label>
+        <label>
+            Количество
+            <select class="number">
+                <option value="1">один</option>
+                <option value="2">несколько</option>
+            </select>
+        </label>
     </div>
 </div>
-<p>
-<div class="container-fluid">
-    <div class="col-xs-6 name">
-        Наименование
+
+<!-- slide main-->
+<div id="main">
+    <div class="header">
+        <div id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-    <div class="col-xs-3 name">
-        Цена
-    </div>
-    <div class="col-xs-3 name">
-        Кол-во
-    </div>
-</div>
-<hr><p>
-<div class="container-fluid" id="_hand_hem">
-    <div class="col-xs-6 name">
-        Ручная подгибка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_cuffs">
-    <div class="col-xs-6 name">
-        Манжет:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_lining">
-    <div class="col-xs-6 name">
-        Подкладка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
+
+    <div class="content">
+
+        <div class="base">
+            <span>Цена основы</span>
+            <input id="pay_base" type="number" placeholder="9999.99">
+        </div>
+
+        <div class="table">
+
+            <div class="table-header">
+                <div class="block">
+                    <div class="name">Наименование</div>
+                    <div class="price">Цена</div>
+                    <div class="count">Кол-во</div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="table-body"></div>
+        </div>
+
+        <div class="result">
+            <span>Результат: </span>
+            <span id="pay_result"></span>
+        </div>
+
     </div>
 </div>
-<div class="container-fluid" id="_coquette_slot">
-    <div class="col-xs-6 name">
-        Кокетка:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
+
+<!-- slide settings-->
+<div id="settings">
+    <div class="settings-body"></div>
 </div>
-<div class="container-fluid" id="_slot">
-    <div class="col-xs-6 name">
-        Шлица:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_incision">
-    <div class="col-xs-6 name">
-        Разрез:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_shaped_bottom">
-    <div class="col-xs-6 name">
-        Фигурный низ:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_fabric_complexity">
-    <div class="col-xs-6 name">
-        Сложность ткани:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <input type="checkbox" class="value">
-    </div>
-</div>
-<div class="container-fluid" id="_pocket">
-    <div class="col-xs-6 name">
-        Карман:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <select class="form-control value">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-</div>
-<div class="container-fluid" id="_additional_detail">
-    <div class="col-xs-6 name">
-        Доп. деталь:
-    </div>
-    <div class="col-xs-3 price">
-        0.00
-    </div>
-    <div class="col-xs-3">
-        <select class="form-control value">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>
-</div>
-<p><hr><p>
-<div class="container-fluid">
-    <div class="col-xs-6">
-        <label>Итого:</label>
-    </div>
-    <div class="col-xs-6">
-        <label id="_total">0.00</label>
-    </div>
-</div>
-<script type="text/javascript" src="js/math.js"></script>
+
+<button type="button" class="btn-add-field" id="btn_add_field">+</button>
+
 </body>
+<script src="js/common.js" charset="UTF-8"></script>
 </html>
