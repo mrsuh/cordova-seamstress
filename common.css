@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #128DDD;
+    width: 100%;
+    height: 100%;
+}
+
+div.content{
+    padding-top: 50%;
+    transform: translateY(-50%);
+}
+.img{
+    text-align: center;
+}
+.img img.main {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+}
+
+.link{
+    padding-top: 25px;
+    text-align: center;
+}
+
+a {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+a img {
+    width: 25px;
+}
