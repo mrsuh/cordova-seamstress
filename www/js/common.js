@@ -49,20 +49,28 @@ var app = {
             cln.removeAttribute('id');
 
             var number = parseInt(data['number']);
-            var input = table_block_checkbox.cloneNode(true);
+
             var input_id = 'main_input_' + key;
             var label = document.createElement('label');
 
-            if (number === 2) {
+            var input = null;
+            if (number === 1) {
+                input = table_block_checkbox.cloneNode(true);
+                label.innerText = '';
+
+                input.onchange = app.math;
+
+            } else {
                 input = table_block_select.cloneNode(true);
-                input.onclick = function (e) {
+                label.innerText = '0';
+
+                input.onchange = function(e){
                     app.select(e.target);
+                    app.math();
                 };
             }
 
-            label.innerText = '0';
             input.setAttribute('id', input_id);
-            input.onchange = app.math;
 
             label.setAttribute('for', input_id);
             cln.querySelector('.number').appendChild(input);
@@ -130,39 +138,8 @@ var app = {
         document.querySelector('#settings .settings-body').appendChild(cln);
     },
     select: function (select) {
-        var modal_select = document.getElementById('select');
-        while (modal_select.firstChild) {
-            modal_select.removeChild(modal_select.firstChild);
-        }
-
-        modal_select.style.display = 'block';
-
-        modal_select.onclick = function () {
-            modal_select.style.display = 'none';
-        };
-
-        var options = select.children;
-        var length = options.length;
-        for (var i = 0; i < length; i++) {
-
-            var div_option = document.createElement('div');
-            div_option.setAttribute('class', 'option');
-            div_option.innerText = options[i].innerText;
-
-            div_option.onclick = function (element) {
-                app.selectOption(select, modal_select, element);
-            };
-
-            modal_select.appendChild(div_option);
-        }
-    },
-    selectOption: function(select, modal_select, element) {
-        modal_select.style.display = 'none';
-        var text = element.target.innerText;
-        select.value = text;
         var id = select.getAttribute('id');
-        document.querySelector('[for="' + id + '"]').innerText = text;
-        app.math();
+        document.querySelector('[for="' + id + '"]').innerText = select.value;
     },
     math: function () {
         var base = document.getElementById('pay_base');
