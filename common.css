@@ -10,7 +10,8 @@ body {
 }
 
 div.content{
-    padding-top: 50%;
+    position: relative;
+    top: 50%;
     transform: translateY(-50%);
 }
 .img{
