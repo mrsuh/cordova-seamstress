@@ -23,20 +23,34 @@ input[type=checkbox] {
 
 input[type=checkbox] {
   & + label {
+    position: relative;
+    top: 50%;
     display: inline-block;
-    text-align: center;
     width: 25px;
     height: 25px;
+    padding-top: 1px;
+    color: #ffffff;
+    text-align: center;
     background-color: #ffffff;
     border: 2px solid #2e2e2e;
-    color: #ffffff;
-    padding-top: 1px;
+    transform: translateY(-50%);
   }
 
   &:checked + label {
     border: 2px solid #ffffff;
     background-color: #128DDD;
     color: #ffffff;
+    &:before {
+        content: '';
+        top:0;
+        left:0;
+        position:absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        border: 4px solid #128DDD;
+    }
   }
 }
 
@@ -205,10 +219,10 @@ input {
             width: 30%;
           }
           .number {
-            padding-top: 5px;
             vertical-align: top;
             width: 20%;
             text-align: center;
+            height: 100%;
 
             select {
               position: absolute;
@@ -222,14 +236,17 @@ input {
 
             select {
               & + label {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
                 display: inline-block;
                 text-align: center;
                 width: 25px;
                 height: 25px;
+                line-height: 21px;
                 background-color: #ffffff;
                 border: 2px solid #2e2e2e;
                 color: #ffffff;
-                padding-top: 1px;
               }
             }
           }
