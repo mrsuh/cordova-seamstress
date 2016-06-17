@@ -33,6 +33,9 @@ input[type=checkbox] {
     text-align: center;
     background-color: #ffffff;
     border: 2px solid #2e2e2e;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 
@@ -238,6 +241,9 @@ input {
               & + label {
                 position: relative;
                 top: 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
                 transform: translateY(-50%);
                 display: inline-block;
                 text-align: center;
@@ -289,10 +295,19 @@ input {
   position: absolute;
   z-index: 1;
   padding: 56px 5px 100px 5px;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
   transform: translateY(-100%);
+  -webkit-transition: transform 0.3s linear 0.3s;
+  -moz-transition: transform 0.3s linear 0.3s;
+  -o-transition: transform 0.3s linear 0.3s;
   transition: transform 0.3s linear 0.3s;
 
   &.active {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
     transform: translateY(0);
   }
 
@@ -322,9 +337,15 @@ input {
           background-color: #2e2e2e;
         }
         &:before {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
           transform: rotate(45deg);
         }
         &:after {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
           transform: rotate(-45deg);
         }
       }
@@ -376,10 +397,16 @@ input {
   text-align: center;
   background-color: #128DDD;
   z-index: 10;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 
   &.show {
     opacity: 1;
+    -webkit-transition: all 800ms cubic-bezier(1.000, 0, 1.000, 0);
+    -moz-transition: all 800ms cubic-bezier(1.000, 0, 1.000, 0);
+    -o-transition: all 800ms cubic-bezier(1.000, 0, 1.000, 0);
     transition: all 800ms cubic-bezier(1.000, 0, 1.000, 0);
   }
 }
